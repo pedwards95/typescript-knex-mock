@@ -1361,6 +1361,9 @@ class MockResolve implements MockPath {
 		}
 		this.currentStack = new Array<Data>();
 		if (tableName) {
+			if (this.config && this.config.printData) {
+				console.log(TABLE, "input", tableName);
+			}
 			let dataToAdd: Data = CraftData(TABLE, tableName, true);
 			this.currentStack.push(dataToAdd);
 		}
